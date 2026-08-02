@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sofia — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <a href="#top" class="nav__logo">sofia<span class="nav__logo-dot">.</span></a>
+    <nav class="nav__links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="resume.pdf" target="_blank" rel="noopener" class="nav__resume">Resume ↗</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO / ABOUT ===== -->
+  <section id="top" class="hero">
+    <div class="hero__grid" aria-hidden="true"></div>
+    <p class="eyebrow">// about</p>
+    <h1 class="hero__title">Hi, I'm Sofia.<br>I build things — software, hardware, and the odd spreadsheet.</h1>
+    <p class="hero__body">
+      I'm a developer who likes taking an idea from a rough sketch to something people can actually use —
+      whether that's a web app, a microcontroller project, or a tool that solves a problem I ran into myself.
+      Currently wrapping up an internship and always tinkering on something new on the side.
+    </p>
+    <div class="hero__actions">
+      <a href="#projects" class="btn btn--primary">See my work</a>
+      <a href="#contact" class="btn btn--ghost">Get in touch</a>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="projects">
+    <p class="eyebrow">// projects</p>
+    <h2 class="section-title">Things I've built</h2>
+
+    <div class="project-grid">
+
+      <a href="#" class="project-card">
+        <div class="project-card__meta">
+          <span>01</span>
+          <span>Web App</span>
+        </div>
+        <h3>Shop Rate — Mechanic Estimate Checker</h3>
+        <p>A price-transparency tool that helps people sanity-check repair shop estimates before they say yes.</p>
+        <div class="project-card__stack">
+          <span>JavaScript</span>
+          <span>React</span>
+        </div>
+      </a>
+
+      <a href="#" class="project-card">
+        <div class="project-card__meta">
+          <span>02</span>
+          <span>Web App</span>
+        </div>
+        <h3>Macro Kitchen</h3>
+        <p>A recipe and meal-planning app that auto-scales portions to hit specific macro targets and builds shopping lists.</p>
+        <div class="project-card__stack">
+          <span>JavaScript</span>
+          <span>Node</span>
+        </div>
+      </a>
+
+      <a href="#" class="project-card">
+        <div class="project-card__meta">
+          <span>03</span>
+          <span>Hardware</span>
+        </div>
+        <h3>BLE Sensor Node</h3>
+        <p>A Bluetooth-connected microcontroller build using an Arduino Nano ESP32, sending live sensor data to a companion app.</p>
+        <div class="project-card__stack">
+          <span>C++</span>
+          <span>BLE</span>
+        </div>
+      </a>
+
+      <a href="#" class="project-card project-card--placeholder">
+        <div class="project-card__meta">
+          <span>04</span>
+          <span>Next up</span>
+        </div>
+        <h3>Your next project</h3>
+        <p>Swap this card out — link it to a live site, a GitHub repo, or a case-study write-up.</p>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="contact">
+    <p class="eyebrow">// contact</p>
+    <h2 class="section-title">Let's talk</h2>
+    <p class="contact__body">
+      Have a project in mind, or just want to say hi? My inbox is open.
+    </p>
+    <div class="contact__links">
+      <a href="mailto:youremail@example.com" class="btn btn--primary">Email me</a>
+      <a href="https://github.com/yourusername" target="_blank" rel="noopener" class="btn btn--ghost">GitHub</a>
+      <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" class="btn btn--ghost">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Built by Sofia · <span id="year"></span></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
