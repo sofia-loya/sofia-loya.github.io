@@ -77,6 +77,14 @@
         architectures across two tasks: locating insulator strings and classifying individual shells as good,
         broken, or flashover-damaged.
       </p>
+
+      <figure class="figure">
+        <img src="images/string-training-samples.png" alt="Sample training images of insulator strings with bounding box annotations.">
+      </figure>
+      <figure class="figure">
+        <img src="images/shell-training-samples.png" alt="Sample training images of insulator shells labeled as good, broken, or flashover-damaged.">
+      </figure>
+
     </div>
 
     <div class="star-block">
@@ -99,6 +107,14 @@
         <li>Trained separate models for insulator-string detection and shell-defect classification, tuning against a CIoU + Distribution Focal Loss + binary cross-entropy loss function</li>
         <li>Evaluated performance using mAP@50 and benchmarked results directly against the YOLOv1 baseline and my teammate-built DINO-DETR transformer variant</li>
       </ul>
+
+      <figure class="figure">
+        <img src="images/string-eval.png" alt="Comparison of ground truth versus YOLOv8 predicted insulator string detection.">
+      </figure>
+      <figure class="figure">
+        <img src="images/shell-eval.png" alt="Comparison of ground truth versus YOLOv8 predicted shell classifications.">
+      </figure>
+
     </div>
 
     <div class="star-block star-block--result">
