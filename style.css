@@ -424,3 +424,34 @@ button:focus-visible {
   border-left: 3px solid var(--copper);
   padding-left: 24px;
 }
+
+/* =========================================================
+   FIGURES (from the paper)
+   ========================================================= */
+.figures {
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.figure {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+  background: #FFFFFF;
+}
+
+.figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
+
+.figure figcaption {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-top: 16px;
+}
