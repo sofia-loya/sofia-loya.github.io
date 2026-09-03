@@ -46,8 +46,8 @@
 
     <div class="metrics">
       <div class="metric">
-        <span class="metric__value">99.5%</span>
-        <span class="metric__label">STRING mAP@50<br>(YOLOv8)</span>
+        <span class="metric__value">92.76%</span>
+        <span class="metric__label">SHELL mAP@50<br>(YOLOv8)</span>
       </div>
       <div class="metric">
         <span class="metric__value">92.8%</span>
@@ -111,15 +111,24 @@
         YOLOv8's convolutional inductive biases generalized more effectively than a transformer-based approach
         on a relatively small training set (1,120 images), a finding with direct implications for deploying
         practical, resource-efficient inspection models in the field.
+
+       <p class="eyebrow">// from the paper</p>
+        <figure class="figure">
+         <img src="images/table1-model-comparison.png" alt="Table 1: Performance comparison of YOLOv1, YOLOv8, and DINO-DETR on the IDID dataset, showing mAP@50 for string detection and shell detection.">
+        </figure>
+
+        <figure class="figure">
+          <img src="images/figure3-training-loss.png" alt="Figure 3: Training loss curves on the string detection model for YOLOv1, YOLOv8, and DINO-DETR.">
+        </figure>
       </p>
     </div>
 
   </section>
 
   <!-- ===== FIGURES FROM THE PAPER ===== -->
-  <section class="figures">
-    <p class="eyebrow">// from the paper</p>
-    <h2 class="section-title">Results in detail</h2>
+  <!--section class="figures">
+    #<p class="eyebrow">// from the paper</p>
+    #<h2 class="section-title">Results in detail</h2>
 
     <figure class="figure">
       <img src="images/table1-model-comparison.png" alt="Table 1: Performance comparison of YOLOv1, YOLOv8, and DINO-DETR on the IDID dataset, showing mAP@50 for string detection and shell detection.">
@@ -128,7 +137,7 @@
     <figure class="figure">
       <img src="images/figure3-training-loss.png" alt="Figure 3: Training loss curves on the string detection model for YOLOv1, YOLOv8, and DINO-DETR.">
     </figure>
-  </section>
+  <!--/section>
 
   <footer class="footer">
     <p>Built by Sofia · <span id="year"></span></p>
