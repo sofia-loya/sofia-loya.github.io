@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insulator Defect Detection — Sofia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <a href="index.html#top" class="nav__logo">sofia<span class="nav__logo-dot">.</span></a>
+    <nav class="nav__links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="resume.pdf" target="_blank" rel="noopener" class="nav__resume">Resume ↗</a>
+    </nav>
+  </header>
+
+  <!-- ===== DETAIL HERO ===== -->
+  <section class="detail-hero">
+    <a href="index.html#projects" class="back-link">← Back to projects</a>
+
+    <div class="detail-hero__tags">
+      <span>Deep Learning</span>
+      <span>Computer Vision</span>
+      <span>PyTorch</span>
+      <span>YOLOv8</span>
+    </div>
+
+    <h1 class="detail-hero__title">Insulator Defect Detection from Aerial Imagery</h1>
+    <p class="detail-hero__subtitle">
+      A computer vision project comparing three object-detection architectures — YOLOv1, YOLOv8, and DINO-DETR —
+      for identifying defective power-line insulators in drone imagery, using the IDID dataset. I independently
+      built and trained the YOLOv8 model, which outperformed both alternatives on every metric.
+    </p>
+
+    <div class="detail-hero__links">
+      <a href="https://github.com/gmwilkin/deep-learning-project.git" target="_blank" rel="noopener" class="btn btn--primary">View code ↗</a>
+    </div>
+
+    <div class="metrics">
+      <div class="metric">
+        <span class="metric__value">99.5%</span>
+        <span class="metric__label">STRING mAP@50<br>(YOLOv8)</span>
+      </div>
+      <div class="metric">
+        <span class="metric__value">92.8%</span>
+        <span class="metric__label">SHELL mAP@50<br>(YOLOv8)</span>
+      </div>
+      <div class="metric">
+        <span class="metric__value">1.0%</span>
+        <span class="metric__label">SHELL mAP@50<br>(YOLOv1 baseline)</span>
+      </div>
+      <div class="metric">
+        <span class="metric__value">1,120</span>
+        <span class="metric__label">TRAINING IMAGES</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STAR WRITEUP ===== -->
+  <section class="star">
+
+    <div class="star-block">
+      <span class="star-block__label">// situation</span>
+      <h3>The problem</h3>
+      <p>
+        As part of a two-person deep learning project, our team set out to automate the detection of defective
+        power-line insulators from aerial drone imagery, replacing the manual, human-in-the-loop inspection
+        process utilities currently rely on. We used the IDID dataset and compared three object-detection
+        architectures across two tasks: locating insulator strings and classifying individual shells as good,
+        broken, or flashover-damaged.
+      </p>
+    </div>
+
+    <div class="star-block">
+      <span class="star-block__label">// task</span>
+      <h3>My role</h3>
+      <p>
+        I was responsible for independently building, training, and evaluating the YOLOv8 model — one of two
+        variant architectures we tested against a YOLOv1 baseline, which I co-built with my teammate. My goal was
+        to determine whether a more modern YOLO architecture could meaningfully outperform the baseline on both
+        detection tasks, particularly the harder shell-classification task where the baseline struggled.
+      </p>
+    </div>
+
+    <div class="star-block">
+      <span class="star-block__label">// action</span>
+      <h3>What I did</h3>
+      <ul>
+        <li>Implemented YOLOv8 using the Ultralytics framework, leveraging its CSPDarknet backbone, PANet feature pyramid neck, and decoupled detection head</li>
+        <li>Applied letterbox resizing to preserve aspect ratio when standardizing the high-resolution drone imagery for training</li>
+        <li>Trained separate models for insulator-string detection and shell-defect classification, tuning against a CIoU + Distribution Focal Loss + binary cross-entropy loss function</li>
+        <li>Evaluated performance using mAP@50 and benchmarked results directly against the YOLOv1 baseline and a teammate-built DINO-DETR transformer variant</li>
+      </ul>
+    </div>
+
+    <div class="star-block star-block--result">
+      <span class="star-block__label">// result</span>
+      <h3>The outcome</h3>
+      <p>
+        My YOLOv8 model was the best-performing architecture on both tasks: 99.5% mAP@50 on string detection
+        (vs. 58.7% for YOLOv1) and 92.8% mAP@50 on shell-defect classification (vs. just 1.0% for YOLOv1) —
+        also outperforming the transformer-based DINO-DETR model (81.8% / 30.6%). The result demonstrated that
+        YOLOv8's convolutional inductive biases generalized more effectively than a transformer-based approach
+        on a relatively small training set (1,120 images), a finding with direct implications for deploying
+        practical, resource-efficient inspection models in the field.
+      </p>
+    </div>
+
+  </section>
+
+  <footer class="footer">
+    <p>Built by Sofia · <span id="year"></span></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
