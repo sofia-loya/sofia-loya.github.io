@@ -83,8 +83,8 @@
       <span class="star-block__label">// task</span>
       <h3>My role</h3>
       <p>
-        I was responsible for independently building, training, and evaluating the YOLOv8 model — one of two
-        variant architectures we tested against a YOLOv1 baseline, which I co-built with my teammate. My goal was
+        I was responsible for independently building, training, and evaluating the YOLOv8 model. This computer vision model 
+        was one of two variant architectures we tested against a YOLOv1 baseline. My goal was
         to determine whether a more modern YOLO architecture could meaningfully outperform the baseline on both
         detection tasks, particularly the harder shell-classification task where the baseline struggled.
       </p>
@@ -97,7 +97,7 @@
         <li>Implemented YOLOv8 using the Ultralytics framework, leveraging its CSPDarknet backbone, PANet feature pyramid neck, and decoupled detection head</li>
         <li>Applied letterbox resizing to preserve aspect ratio when standardizing the high-resolution drone imagery for training</li>
         <li>Trained separate models for insulator-string detection and shell-defect classification, tuning against a CIoU + Distribution Focal Loss + binary cross-entropy loss function</li>
-        <li>Evaluated performance using mAP@50 and benchmarked results directly against the YOLOv1 baseline and a teammate-built DINO-DETR transformer variant</li>
+        <li>Evaluated performance using mAP@50 and benchmarked results directly against the YOLOv1 baseline and my teammate-built DINO-DETR transformer variant</li>
       </ul>
     </div>
 
@@ -105,9 +105,9 @@
       <span class="star-block__label">// result</span>
       <h3>The outcome</h3>
       <p>
-        My YOLOv8 model was the best-performing architecture on both tasks: 99.5% mAP@50 on string detection
-        (vs. 58.7% for YOLOv1) and 92.8% mAP@50 on shell-defect classification (vs. just 1.0% for YOLOv1) —
-        also outperforming the transformer-based DINO-DETR model (81.8% / 30.6%). The result demonstrated that
+        The YOLOv8 model results on both tasks: 99.5% mAP@50 on string detection
+        (vs. 58.7% for YOLOv1) and 92.8% mAP@50 on shell-defect classification (vs. just 1.0% for YOLOv1). This architecture
+        outperforming the transformer-based DINO-DETR model (81.8% / 30.6%). The result demonstrated that
         YOLOv8's convolutional inductive biases generalized more effectively than a transformer-based approach
         on a relatively small training set (1,120 images), a finding with direct implications for deploying
         practical, resource-efficient inspection models in the field.
@@ -123,12 +123,10 @@
 
     <figure class="figure">
       <img src="images/table1-model-comparison.png" alt="Table 1: Performance comparison of YOLOv1, YOLOv8, and DINO-DETR on the IDID dataset, showing mAP@50 for string detection and shell detection.">
-      <figcaption>Table 1 — Performance comparison across all three architectures on both detection tasks.</figcaption>
     </figure>
 
     <figure class="figure">
       <img src="images/figure3-training-loss.png" alt="Figure 3: Training loss curves on the string detection model for YOLOv1, YOLOv8, and DINO-DETR.">
-      <figcaption>Figure 3 — Training loss on the string-detection model across the three variants. YOLOv8 (center) converges fastest and most smoothly.</figcaption>
     </figure>
   </section>
 
