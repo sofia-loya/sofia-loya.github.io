@@ -194,12 +194,14 @@ button:focus-visible {
 }
 
 .hero__photo {
-  width: 84px;
-  height: 84px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--line);
-  flex-shrink: 0;
 }
 
 .hero__top .hero__name,
@@ -306,7 +308,15 @@ button:focus-visible {
   flex-direction: column;
   gap: 2px;
   }
+  .hero__photo {
+  width: 52px;
+  height: 52px;
+  top: 16px;
+  right: 16px;
+  }
 }
+
+
 
 .project-card {
   display: block;
