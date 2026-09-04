@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Undulation Robot — Sofia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <a href="index.html#top" class="nav__logo">sofia<span class="nav__logo-dot">.</span></a>
+    <nav class="nav__links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="resume.pdf" target="_blank" rel="noopener" class="nav__resume">Resume ↗</a>
+    </nav>
+  </header>
+
+  <!-- ===== DETAIL HERO ===== -->
+  <section class="detail-hero">
+    <a href="index.html#projects" class="back-link">← Back to projects</a>
+
+    <div class="detail-hero__tags">
+      <span>Robotics</span>
+      <span>Mechanical Design</span>
+      <span>Motor Torque Analysis</span>
+      <span>Statistics</span>
+    </div>
+
+    <h1 class="detail-hero__title">Snake Undulation: Development of Multi-Modal Locomotion in a Bio-Inspired System</h1>
+    <p class="detail-hero__subtitle">
+      A modular, 7-segment gliding snake robot built to test whether aerial undulation — the motion
+      real gliding snakes use mid-flight — actually increases glide distance. A five-person team project;
+      I led the motor torque analysis that sized and selected the actuators, and worked on experimental
+      testing and statistical analysis of the results.
+    </p>
+
+    <div class="metrics">
+      <div class="metric">
+        <span class="metric__value">+8.7%</span>
+        <span class="metric__label">GLIDE DISTANCE<br>AT 1.8 m/s</span>
+      </div>
+      <div class="metric">
+        <span class="metric__value">p=0.010</span>
+        <span class="metric__label">TWO-SAMPLE<br>T-TEST</span>
+      </div>
+      <div class="metric">
+        <span class="metric__value">3× → 4×</span>
+        <span class="metric__label">MOTOR SAFETY<br>FACTOR IMPROVED</span>
+      </div>
+      <div class="metric">
+        <span class="metric__value">7</span>
+        <span class="metric__label">MODULES,<br>6 SERVOS</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STAR WRITEUP ===== -->
+  <section class="star">
+
+    <div class="star-block">
+      <span class="star-block__label">// situation</span>
+      <h3>The problem</h3>
+      <p>
+        The gliding snake <em>Chrysopelea paradisi</em> actively undulates its body while airborne to maintain
+        stability, but whether that undulation actually increases how far it glides had never been tested in a
+        controlled experiment. As a five-person team in a bio-inspired design course, we set out to build a
+        physical robot that could isolate and test that one variable — comparing horizontal glide distance with
+        and without undulation under identical launch conditions.
+      </p>
+      <figure class="figure">
+        <img src="images/background.jpg" alt="Top: the gliding snake Chrysopelea paradisi mid-flight, flattening its body into an airfoil shape. Bottom: the modular bio-inspired robot built to replicate its undulatory motion.">
+        <figcaption>The gliding snake Chrysopelea paradisi mid-flight (top), and the modular bio-inspired robot we built to replicate its undulatory motion (bottom).</figcaption>
+      </figure>
+    </div>
+
+    <div class="star-block">
+      <span class="star-block__label">// task</span>
+      <h3>My role</h3>
+      <p>
+        My responsibility was the motor torque analysis that determined which actuators the robot could
+        safely use — work that fed directly into the electrical team's motor selection and the final mechanical
+        design of the side modules. I also contributed to the experimental testing of the physical robot and
+        the statistical analysis used to evaluate whether undulation meaningfully changed glide distance.
+      </p>
+      <div class="star-block__figures">
+        <figure class="figure">
+          <img src="images/design.jpg" alt="Top: mechanical design of the modular snake robot showing the module linkage connector, micro servo motors, center module, and side modules. Bottom: overview of the electrical system including the Arduino Nano, multiplexer, motor driver, magnetic sensor, and servo array.">
+          <figcaption>Mechanical design of the 7-module robot (top) and its electrical system (bottom) — the platform my torque analysis needed to fit within.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="star-block">
+      <span class="star-block__label">// action</span>
+      <h3>What I did</h3>
+      <ul>
+        <li>Modeled each module's joint angle as a sinusoidal traveling wave and derived the peak angular acceleration each motor would need to overcome</li>
+        <li>Applied Newton's second law and the parallel-axis theorem to calculate the required torque at each joint, treating the center module as the origin and analyzing only half the (symmetric) robot</li>
+        <li>Compared four different cross-section models (thin rod, hoop, solid cylinder, hollow cylinder) to bound the moment-of-inertia estimate for each module</li>
+        <li>Designed and torque-tested two candidate side-module materials — PLA (1.25 g/cm³) and balsa wood (0.16 g/cm³) — and passed both torque tables to the electrical team for motor selection</li>
+        <li>Calculated a motor safety factor for every joint against 50% of the servo's stall torque, to keep the design well within a safe working envelope</li>
+        <li>Contributed to physical launch testing across four experimental conditions (1.1 m/s and 1.8 m/s, with and without undulation, 5 trials each), and to the statistical analysis — Anderson-Darling normality testing followed by two-sample t-tests — used to evaluate the results</li>
+      </ul>
+
+      <p style="margin-top: 28px;">The core calculation: each module <em>i</em> follows a sinusoidal joint trajectory, and the peak angular acceleration sets the worst-case torque demand at each joint.</p>
+
+      <div class="equation-block">
+        <div class="eq">θᵢ(t) = A · sin(ωt + φᵢ)</div>
+        <div class="eq">θ̈ᵢ(t) = −Aω² · sin(ωt + φᵢ)  →  peak magnitude |θ̈|max = Aω²</div>
+        <div class="eq">τⱼ = Ij,total · |θ̈|max        (Newton's second law at joint j)</div>
+        <div class="eq">I = Icm + m·d²        (parallel-axis theorem, d = distance from pivot to center of mass)</div>
+        <div class="eq">SFⱼ = τsafe / τⱼ,   where τsafe = 0.50 · τstall = 0.0735 N·m</div>
+        <p class="eq-note">A = π/4 rad (max amplitude), ω = 2.8 rad/s. Four Icm models were compared — thin rod, hoop, solid cylinder, hollow cylinder — to bound the estimate. SFⱼ ≥ 1 means the motor operates safely; the innermost joint (highest inertia) was the limiting case.</p>
+      </div>
+
+      <div class="star-block__figures">
+        <figure class="figure">
+          <img src="images/table3-torque-pla.png" alt="Table 3: Moment of inertia and required torque by motor position for the PLA side-module design.">
+          <figcaption>Table III — Required torque by motor position, PLA design (ρ = 1.25 g/cm³).</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="images/table4-torque-balsa.png" alt="Table 4: Moment of inertia and required torque by motor position for the balsa wood side-module design.">
+          <figcaption>Table IV — Required torque by motor position, balsa wood design (ρ = 0.16 g/cm³).</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="star-block star-block--result">
+      <span class="star-block__label">// result</span>
+      <h3>The outcome</h3>
+      <p>
+        Switching the side-module material from PLA to balsa wood — informed directly by my torque
+        analysis — improved the innermost motor's safety factor from 3× to 4×, giving the team a lighter,
+        safer final design. On the physical robot, undulation did not improve glide distance at the lower
+        launch speed of 1.1 m/s (p = 0.998), but at 1.8 m/s it increased mean glide distance by 8.7%,
+        from 0.595 ± 0.024 m to 0.647 ± 0.028 m (p = 0.010) — a statistically significant result showing
+        that undulation's benefit depends on reaching a sufficient launch velocity.
+      </p>
+
+      <figure class="figure">
+        <img src="images/launch-un-nu.jpg" alt="Video frame sequence comparing the robot's launch trajectory without undulation (top row) and with undulation (bottom row).">
+        <figcaption>Launch trajectory without undulation (top) vs. with undulation (bottom) at matched launch conditions.</figcaption>
+      </figure>
+
+      <figure class="figure">
+        <img src="images/stats.png" alt="Box and whisker plots comparing landing distance between undulation and no-undulation conditions at launch speeds of 1.1 m/s and 1.8 m/s.">
+        <figcaption>Landing distance by condition at each launch speed — no separation at 1.1 m/s, a clear and significant gap at 1.8 m/s.</figcaption>
+      </figure>
+
+      <figure class="figure">
+        <img src="images/table2-landing-distance.png" alt="Table 2: Landing distance from cliff in meters for all five trials at each of the four experimental conditions.">
+        <figcaption>Table II — Landing distance from cliff (m) across all five trials per condition.</figcaption>
+      </figure>
+    </div>
+
+  </section>
+
+  <footer class="footer">
+    <p>Built by Sofia · <span id="year"></span></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

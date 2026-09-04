@@ -166,6 +166,13 @@ button:focus-visible {
   padding-bottom: 40px;
 }
 
+.hero__header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
 .hero__name {
   font-family: var(--font-display);
   font-size: clamp(26px, 5vw, 34px);
@@ -177,7 +184,7 @@ button:focus-visible {
   font-family: var(--font-mono);
   font-size: 13.5px;
   color: var(--ink-soft);
-  margin: 0 0 32px;
+  margin: 0;
 }
 
 .hero__contact a {
@@ -186,30 +193,17 @@ button:focus-visible {
   transition: border-color 0.15s ease;
 }
 
-.hero__top {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 24px;
-}
+.hero__contact a:hover { border-color: var(--copper); }
 
+/* Small circular photo, sits to the left of the name */
 .hero__photo {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  width: 72px;
-  height: 72px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--line);
+  flex-shrink: 0;
 }
-
-.hero__top .hero__name,
-.hero__top .hero__contact {
-  margin-bottom: 0;
-}
-
-.hero__contact a:hover { border-color: var(--copper); }
 
 .education__label {
   font-family: var(--font-mono);
@@ -294,29 +288,6 @@ button:focus-visible {
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
-
-@media (max-width: 640px) {
-  .project-grid { grid-template-columns: 1fr; }
-  .hero--compact {
-  padding-top: 28px;
-  padding-bottom: 20px;
-  }
-  .projects {
-  padding-top: 20px;
-  }
-  .education__row {
-  flex-direction: column;
-  gap: 2px;
-  }
-  .hero__photo {
-  width: 52px;
-  height: 52px;
-  top: 16px;
-  right: 16px;
-  }
-}
-
-
 
 .project-card {
   display: block;
@@ -471,10 +442,6 @@ button:focus-visible {
   margin: 48px 0 0;
 }
 
-@media (max-width: 640px) {
-  .metrics { grid-template-columns: repeat(2, 1fr); }
-}
-
 .metric {
   background: #FFFFFF;
   padding: 20px;
@@ -567,4 +534,85 @@ button:focus-visible {
   font-size: 13px;
   color: var(--ink-soft);
   margin-top: 16px;
+}
+
+/* Two-up figure grid, for STAR blocks with paired images (e.g. mechanical/electrical) */
+.star-block__figures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 20px;
+  max-width: 680px;
+}
+
+.star-block__figures .figure {
+  padding: 12px;
+}
+
+.star-block__figures figcaption {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* Equation blocks — for rewritten math, no image needed */
+.equation-block {
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin: 16px 0;
+  max-width: 680px;
+}
+
+.equation-block .eq {
+  font-family: var(--font-mono);
+  font-size: 14.5px;
+  color: var(--ink);
+  margin: 6px 0;
+  overflow-x: auto;
+}
+
+.equation-block .eq-note {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin: 10px 0 0;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+@media (max-width: 640px) {
+  .project-grid { grid-template-columns: 1fr; }
+
+  .hero--compact {
+    padding-top: 28px;
+    padding-bottom: 20px;
+  }
+
+  .projects {
+    padding-top: 20px;
+  }
+
+  .education__row {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .hero__photo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .hero__header {
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .star-block__figures {
+    grid-template-columns: 1fr;
+  }
 }
