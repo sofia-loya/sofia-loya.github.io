@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LCR Meter Automation — Sofia Loya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <a href="index.html" class="nav__logo">sofia<span class="nav__logo-dot">.</span></a>
+    <nav class="nav__links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="resume.pdf" target="_blank" rel="noopener" class="nav__resume">Resume ↗</a>
+    </nav>
+  </header>
+
+  <!-- ===== DETAIL HERO ===== -->
+  <section class="detail-hero">
+    <a href="index.html#projects" class="back-link">← Back to projects</a>
+
+    <div class="detail-hero__tags">
+      <span>Test Automation</span>
+      <span>Python</span>
+      <span>Instrumentation</span>
+    </div>
+
+    <h1 class="detail-hero__title">LCR Meter Data-Collection Automation</h1>
+    <p class="detail-hero__subtitle">
+      A project I owned end to end: a Python tool that talks directly to an LCR meter, captures its
+      impedance measurements, runs the required calculations, and collapses a 99-point manual test
+      into a single automated output file.
+    </p>
+
+    <div class="metrics">
+      <div class="metric">
+        <span class="metric__value">99 → 1</span>
+        <span class="metric__label">Manual entries to one file</span>
+      </div>
+      <div class="metric">
+        <span class="metric__value">~1 day</span>
+        <span class="metric__label">Prior test time / catheter</span>
+      </div>
+      <div class="metric">
+        <span class="metric__value">100%</span>
+        <span class="metric__label">Calculations automated</span>
+      </div>
+      <div class="metric">
+        <span class="metric__value">Python</span>
+        <span class="metric__label">Direct instrument control</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STAR ===== -->
+  <section class="star">
+
+    <div class="star-block">
+      <span class="star-block__label">// situation</span>
+      <h3>A full day of hand-recording 99 data points</h3>
+      <p>
+        The capacitive coupling test method required an operator to manually read and record 99
+        impedance data points from an LCR meter for a single catheter. It was slow and error-prone —
+        a single unit could take up to a full day — and it pulled skilled operators into repetitive
+        transcription instead of higher-value work.
+      </p>
+    </div>
+
+    <div class="star-block">
+      <span class="star-block__label">// task</span>
+      <h3>Automate the whole collection loop</h3>
+      <p>
+        Own the automation end to end: build a tool that communicates with the LCR meter directly,
+        captures its measurements, performs the required calculations, and produces one clean data
+        file — removing manual transcription from the process entirely.
+      </p>
+    </div>
+
+    <div class="star-block">
+      <span class="star-block__label">// action</span>
+      <h3>A direct serial link, built for reliable readings</h3>
+      <ul>
+        <li>
+          <strong>Talked to the instrument directly.</strong> Established serial communication with a
+          Hioki IM3536 LCR meter over USB using Python and pySerial, so measurements are read straight
+          off the meter rather than typed in by hand.
+        </li>
+        <li>
+          <strong>Structured the workflow.</strong> The tool generates a fresh output file seeded with
+          the test's base information, then prompts once for the meter settings and operator details
+          before collection begins.
+        </li>
+        <li>
+          <strong>Designed for measurement quality.</strong> Implemented a discard-first-reading pattern
+          to drop the meter's unsettled initial sample at each point, improving the reliability of the
+          logged values.
+        </li>
+        <li>
+          <strong>Captured and computed automatically.</strong> As the operator steps the connection
+          through the electrode set, the tool records each measurement, performs the required impedance
+          calculations, and logs everything to a single CSV.
+        </li>
+      </ul>
+    </div>
+
+    <div class="star-block star-block--result">
+      <span class="star-block__label">// result</span>
+      <h3>99 manual steps, reduced to one output file</h3>
+      <ul>
+        <li>Collapsed 99 manual data-entry steps into a single automated output file, removing hand transcription and the errors that came with it.</li>
+        <li>Cut the data-collection burden of a test that previously took up to a full day per catheter.</li>
+        <li>Built to support the team's ongoing testing on this method after the internship.</li>
+        <li>Scoped the next step — a relay-based switching network (reed relays driven by shift registers) to automate the physical connections as well, moving toward a fully hands-off test.</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <footer class="footer">
+    <p>Built by Sofia · <span id="year"></span></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

@@ -4,10 +4,15 @@
 :root {
   --ink: #1B2430;          /* near-black navy, primary text/bg */
   --paper: #F7F4EE;        /* warm off-white, main background */
-  --copper: #BB6B2C;       /* accent — links, highlights */
+  --cardinal: #A6192E;     /* accent — Carnegie-inspired red, links & highlights */
   --sage: #4C7A73;         /* secondary accent — tags, borders */
   --line: rgba(27, 36, 48, 0.14);
   --ink-soft: rgba(27, 36, 48, 0.65);
+
+  /* Tartan plaid — woven from the palette, used sparingly as an accent */
+  --tartan-base: #A6192E;                 /* red ground */
+  --tartan-weave: rgba(27, 36, 48, 0.55); /* navy overstripes (cross to darken) */
+  --tartan-gold: rgba(196, 150, 74, 0.9); /* thin gold overstripe */
 
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -39,6 +44,19 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Thin tartan ribbon across the very top of the page — the CMU nod */
+body::before {
+  content: "";
+  display: block;
+  height: 6px;
+  background-color: var(--tartan-base);
+  background-image:
+    repeating-linear-gradient(90deg,
+      transparent 0 14px, var(--tartan-weave) 14px 24px, transparent 24px 40px),
+    repeating-linear-gradient(90deg,
+      transparent 0 36px, var(--tartan-gold) 36px 38px, transparent 38px 40px);
+}
+
 a { color: inherit; text-decoration: none; }
 
 img { max-width: 100%; display: block; }
@@ -52,7 +70,7 @@ section {
 .eyebrow {
   font-family: var(--font-mono);
   font-size: 13px;
-  color: var(--copper);
+  color: var(--cardinal);
   letter-spacing: 0.02em;
   margin: 0 0 16px;
 }
@@ -67,7 +85,7 @@ section {
 /* Visible keyboard focus */
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--copper);
+  outline: 2px solid var(--cardinal);
   outline-offset: 3px;
   border-radius: var(--radius);
 }
@@ -95,7 +113,7 @@ button:focus-visible {
   font-size: 20px;
 }
 
-.nav__logo-dot { color: var(--copper); }
+.nav__logo-dot { color: var(--cardinal); }
 
 .nav__links {
   display: flex;
@@ -110,9 +128,9 @@ button:focus-visible {
   transition: border-color 0.15s ease;
 }
 
-.nav__links a:hover { border-color: var(--copper); }
+.nav__links a:hover { border-color: var(--cardinal); }
 
-.nav__resume { color: var(--copper); }
+.nav__resume { color: var(--cardinal); }
 
 /* =========================================================
    HERO
@@ -123,18 +141,28 @@ button:focus-visible {
   padding-bottom: 120px;
 }
 
-/* Subtle blueprint-style grid, faded into the corner — the page's one signature flourish */
+/* Subtle tartan swatch, faded into the corner — the page's one signature flourish */
 .hero__grid {
   position: absolute;
   top: 0;
   right: 0;
-  width: 280px;
-  height: 280px;
+  width: 320px;
+  height: 320px;
+  opacity: 0.13;
+  background-color: var(--tartan-base);
   background-image:
-    linear-gradient(var(--line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size: 28px 28px;
-  mask-image: radial-gradient(circle at top right, black, transparent 70%);
+    /* navy overstripes, both directions — they cross to make the woven squares */
+    repeating-linear-gradient(90deg,
+      transparent 0 18px, var(--tartan-weave) 18px 30px, transparent 30px 52px),
+    repeating-linear-gradient(0deg,
+      transparent 0 18px, var(--tartan-weave) 18px 30px, transparent 30px 52px),
+    /* thin gold overstripes */
+    repeating-linear-gradient(90deg,
+      transparent 0 46px, var(--tartan-gold) 46px 48px, transparent 48px 52px),
+    repeating-linear-gradient(0deg,
+      transparent 0 46px, var(--tartan-gold) 46px 48px, transparent 48px 52px);
+  mask-image: radial-gradient(circle at top right, black, transparent 72%);
+  -webkit-mask-image: radial-gradient(circle at top right, black, transparent 72%);
   pointer-events: none;
 }
 
@@ -188,12 +216,12 @@ button:focus-visible {
 }
 
 .hero__contact a {
-  color: var(--copper);
+  color: var(--cardinal);
   border-bottom: 1px solid transparent;
   transition: border-color 0.15s ease;
 }
 
-.hero__contact a:hover { border-color: var(--copper); }
+.hero__contact a:hover { border-color: var(--cardinal); }
 
 /* Small circular photo, sits to the left of the name */
 .hero__photo {
@@ -266,7 +294,7 @@ button:focus-visible {
 }
 
 .btn--primary:hover {
-  background: var(--copper);
+  background: var(--cardinal);
   transform: translateY(-2px);
 }
 
@@ -299,7 +327,7 @@ button:focus-visible {
 }
 
 .project-card:hover {
-  border-color: var(--copper);
+  border-color: var(--cardinal);
   transform: translateY(-3px);
 }
 
@@ -390,7 +418,7 @@ button:focus-visible {
   transition: color 0.15s ease;
 }
 
-.back-link:hover { color: var(--copper); }
+.back-link:hover { color: var(--cardinal); }
 
 .detail-hero__tags {
   display: flex;
@@ -452,7 +480,7 @@ button:focus-visible {
   font-family: var(--font-display);
   font-size: 26px;
   font-weight: 600;
-  color: var(--copper);
+  color: var(--cardinal);
   display: block;
 }
 
@@ -474,7 +502,7 @@ button:focus-visible {
 .star-block__label {
   font-family: var(--font-mono);
   font-size: 13px;
-  color: var(--copper);
+  color: var(--cardinal);
   display: block;
   margin-bottom: 10px;
 }
@@ -501,7 +529,7 @@ button:focus-visible {
 .star-block li { margin-bottom: 8px; }
 
 .star-block--result {
-  border-left: 3px solid var(--copper);
+  border-left: 3px solid var(--cardinal);
   padding-left: 24px;
 }
 

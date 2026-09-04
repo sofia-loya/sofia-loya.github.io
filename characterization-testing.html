@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Characterization Testing — Sofia Loya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <a href="index.html" class="nav__logo">sofia<span class="nav__logo-dot">.</span></a>
+    <nav class="nav__links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="resume.pdf" target="_blank" rel="noopener" class="nav__resume">Resume ↗</a>
+    </nav>
+  </header>
+
+  <!-- ===== DETAIL HERO ===== -->
+  <section class="detail-hero">
+    <a href="index.html#projects" class="back-link">← Back to projects</a>
+
+    <div class="detail-hero__tags">
+      <span>Medical Device</span>
+      <span>Reliability Engineering</span>
+      <span>Test Method Development</span>
+    </div>
+
+    <h1 class="detail-hero__title">Preparation &amp; Execution of Characterization Testing</h1>
+    <p class="detail-hero__subtitle">
+      As a Reliability Engineering intern, I drove the development of six test methods for a
+      pre-commercial cardiac ablation catheter — building the risk-based test strategy that
+      prepares the device for Design Verification and EU clinical-trial readiness.
+    </p>
+
+    <div class="metrics">
+      <div class="metric">
+        <span class="metric__value">6</span>
+        <span class="metric__label">Test methods driven</span>
+      </div>
+      <div class="metric">
+        <span class="metric__value">4</span>
+        <span class="metric__label">Step systematic approach</span>
+      </div>
+      <div class="metric">
+        <span class="metric__value">DFMEA</span>
+        <span class="metric__label">Risk-based selection</span>
+      </div>
+      <div class="metric">
+        <span class="metric__value">DV</span>
+        <span class="metric__label">Feeds Design Verification</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STAR ===== -->
+  <section class="star">
+
+    <div class="star-block">
+      <span class="star-block__label">// situation</span>
+      <h3>A smaller catheter that couldn't reuse its predecessor's tests</h3>
+      <p>
+        A pre-commercial, small-form-factor cardiac ablation catheter needed characterization
+        testing to prepare for Design Verification (DV) ahead of EU clinical trials. Because the
+        device was a smaller redesign of an existing platform, its inherited test methods couldn't
+        simply be reused — they had to be reassessed and adapted to the new design before any
+        verification results could be trusted.
+      </p>
+    </div>
+
+    <div class="star-block">
+      <span class="star-block__label">// task</span>
+      <h3>Own the test methods that move the project toward verification</h3>
+      <p>
+        Drive the development of six test methods for characterization testing: identify which
+        specifications mattered most for patient safety, adapt each method to the new design, and
+        help sequence and execute the testing so results would represent real-world performance.
+      </p>
+    </div>
+
+    <div class="star-block">
+      <span class="star-block__label">// action</span>
+      <h3>A four-step, risk-first approach</h3>
+      <ul>
+        <li>
+          <strong>Risk analysis.</strong> Evaluated the Design FMEA (DFMEA) and Hazard Analysis with
+          the team to isolate the safety-critical risks — those above a defined Risk-Before-Mitigation
+          threshold and severity rating — then traced each risk back to the specifications that
+          needed to be evaluated.
+        </li>
+        <li>
+          <strong>Assess &amp; modify test methods.</strong> Adapted methods from a larger-form-factor
+          predecessor to the new catheter, updating them for design differences such as the reduced
+          electrode count, and rewrote them so an operator with no prior knowledge could follow along —
+          adding diagrams, photos, and clearer instructions, then validating through dry runs. For
+          example, I revised dielectric strength testing with an updated test voltage and a newly
+          designed fixture for the smaller electrode groupings.
+        </li>
+        <li>
+          <strong>Test flow development.</strong> Collaborated with another intern to sequence the full
+          test flow around two hard constraints — the destructive nature of certain tests and limited
+          catheter availability — so the order reflected real clinical use and produced results
+          representative of field performance.
+        </li>
+        <li>
+          <strong>Execution.</strong> Gathered materials, organized the lab space, and executed
+          characterization testing alongside the team.
+        </li>
+      </ul>
+    </div>
+
+    <div class="star-block star-block--result">
+      <span class="star-block__label">// result</span>
+      <h3>A test strategy the team carries into Design Verification</h3>
+      <ul>
+        <li>The six test methods and their fixtures were adopted as the basis for Design Verification going forward.</li>
+        <li>The risk-based selection and test flow became the process the team continues to use into DV.</li>
+        <li>Assessed test-method reproducibility to ensure consistent, reliable execution before verification.</li>
+        <li>The work directly supports readiness for EU clinical trials, and ultimately human use.</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <footer class="footer">
+    <p>Built by Sofia · <span id="year"></span></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
