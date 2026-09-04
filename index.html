@@ -85,9 +85,23 @@
         </div>
       </a>
 
-      <a href="characterization-testing.html" class="project-card">
+      <a href="insulator-defect-detection.html" class="project-card">
         <div class="project-card__meta">
           <span>02</span>
+          <span>Deep Learning</span>
+        </div>
+        <h3>Insulator Defect Detection from Aerial Imagery</h3>
+        <p>Built a YOLOv8 model to detect and classify power-line insulator defects from drone imagery, improving shell-defect detection from 1% to 93% mAP@50 over a YOLOv1 baseline.</p>
+        <div class="project-card__stack">
+          <span>PyTorch</span>
+          <span>YOLOv8</span>
+          <span>Ultralytics</span>
+        </div>
+      </a>
+
+      <a href="characterization-testing.html" class="project-card">
+        <div class="project-card__meta">
+          <span>03</span>
           <span>Medical Device</span>
         </div>
         <h3>Preparation &amp; Execution of Characterization Testing</h3>
@@ -101,7 +115,7 @@
 
       <a href="lcr-automation.html" class="project-card">
         <div class="project-card__meta">
-          <span>03</span>
+          <span>04</span>
           <span>Test Automation</span>
         </div>
         <h3>LCR Meter Data-Collection Automation</h3>
@@ -113,20 +127,51 @@
         </div>
       </a>
 
-      <a href="insulator-defect-detection.html" class="project-card">
-        <div class="project-card__meta">
-          <span>04</span>
-          <span>Deep Learning</span>
-        </div>
-        <h3>Insulator Defect Detection from Aerial Imagery</h3>
-        <p>Built a YOLOv8 model to detect and classify power-line insulator defects from drone imagery, improving shell-defect detection from 1% to 93% mAP@50 over a YOLOv1 baseline.</p>
-        <div class="project-card__stack">
-          <span>PyTorch</span>
-          <span>YOLOv8</span>
-          <span>Ultralytics</span>
-        </div>
-      </a>
+    </div>
+  </section>
 
+  <!-- ===== HACKATHON HIGHLIGHT ===== -->
+  <section id="hackathon" class="highlight">
+    <p class="eyebrow">// highlight</p>
+    <h2 class="section-title">BrainSight — Medtronic Intern Hackathon</h2>
+
+    <div class="highlight__grid">
+      <figure class="highlight__media">
+        <img src="images/hackathon.jpg" alt="Team YottaBrainz holding their certificates at Medtronic headquarters after winning first place">
+        <figcaption>Team YottaBrainz at Medtronic HQ after taking first place in neuromodulation.</figcaption>
+      </figure>
+
+      <div class="highlight__body">
+        <span class="badge">🏆 1st Place · Neuromodulation</span>
+
+        <p>
+          As part of the Medtronic Intern Hackathon, my team (YottaBrainz) built
+          <strong>BrainSight</strong>, a closed-loop adaptive Deep Brain Stimulation (aDBS)
+          parameter simulator for Parkinson's disease — and won first place in the
+          neuromodulation track.
+        </p>
+        <p>
+          Traditional DBS runs at fixed settings around the clock, like a porch light left on
+          all day. BrainSight demonstrates the smarter, <em>closed-loop</em> alternative: it
+          reads a brain biomarker (beta-band activity in the subthalamic nucleus), and turns
+          stimulation up when symptoms rise and down when they settle — like a thermostat. The
+          simulator runs three virtual patients side by side (no DBS, fixed DBS, and adaptive
+          DBS) so you can watch the adaptive approach hold symptoms in check while using
+          noticeably less energy — the "same relief, less battery" story that matters for an
+          implanted device. An optional Bluetooth link even drives a physical Arduino stimulator
+          demo whose LED tracks the live stimulation level in real time.
+        </p>
+        <p class="highlight__prize">
+          The first-place prize was a photo with Medtronic Chairman &amp; CEO Geoff Martha.
+        </p>
+
+        <div class="highlight__links">
+          <a href="https://github.com/silvercube227/mdthack" target="_blank" rel="noopener" class="btn btn--ghost">View the code ↗</a>
+          <!-- Live simulation: paste the deployed URL below and remove the "disabled" comment wrapper to show the button.
+          <a href="LIVE_SIM_URL" target="_blank" rel="noopener" class="btn btn--primary">Live simulation ↗</a>
+          -->
+        </div>
+      </div>
     </div>
   </section>
 
