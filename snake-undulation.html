@@ -51,7 +51,7 @@
         The gliding snake <em>Chrysopelea paradisi</em> actively undulates its body while airborne to maintain
         stability, but whether that undulation actually increases how far it glides had never been tested in a
         controlled experiment. As a five-person team in a bio-inspired design course, we set out to build a
-        physical robot that could isolate and test that one variable — comparing horizontal glide distance with
+        physical robot that could isolate and test that one variable. This experiemnt compared horizontal glide distance with
         and without undulation under identical launch conditions.
       </p>
       <figure class="figure">
@@ -65,7 +65,7 @@
       <h3>My role</h3>
       <p>
         My responsibility was the motor torque analysis that determined which actuators the robot could
-        safely use — work that fed directly into the electrical team's motor selection and the final mechanical
+        safely use. This work fed directly into the electrical team's motor selection and the final mechanical
         design of the side modules. I also contributed to the experimental testing of the physical robot and
         the statistical analysis used to evaluate whether undulation meaningfully changed glide distance.
       </p>
@@ -82,9 +82,9 @@
         <li>Modeled each module's joint angle as a sinusoidal traveling wave and derived the peak angular acceleration each motor would need to overcome</li>
         <li>Applied Newton's second law and the parallel-axis theorem to calculate the required torque at each joint, treating the center module as the origin and analyzing only half the (symmetric) robot</li>
         <li>Compared four different cross-section models (thin rod, hoop, solid cylinder, hollow cylinder) to bound the moment-of-inertia estimate for each module</li>
-        <li>Designed and torque-tested two candidate side-module materials — PLA (1.25 g/cm³) and balsa wood (0.16 g/cm³) — and passed both torque tables to the electrical team for motor selection</li>
+        <li>Designed and torque-tested two candidate side-module materials: PLA (1.25 g/cm³) and balsa wood (0.16 g/cm³). Passed both torque tables to the electrical team for motor selection</li>
         <li>Calculated a motor safety factor for every joint against 50% of the servo's stall torque, to keep the design well within a safe working envelope</li>
-        <li>Contributed to physical launch testing across four experimental conditions (1.1 m/s and 1.8 m/s, with and without undulation, 5 trials each), and to the statistical analysis — Anderson-Darling normality testing followed by two-sample t-tests — used to evaluate the results</li>
+        <li>Contributed to physical launch testing across four experimental conditions (1.1 m/s and 1.8 m/s, with and without undulation, 5 trials each), and to the statistical analysis. The Anderson-Darling normality testing followed by two-sample t-tests was used to evaluate the results</li>
       </ul>
 
       <p style="margin-top: 28px;">The core calculation: each module <em>i</em> follows a sinusoidal joint trajectory, and the peak angular acceleration sets the worst-case torque demand at each joint.</p>
@@ -156,9 +156,9 @@
       <span class="star-block__label">// result</span>
       <h3>The outcome</h3>
       <p>
-        Switching the side-module material from PLA to balsa wood — informed directly by my torque
-        analysis — improved the innermost motor's safety factor from 3× to 4×, giving the team a lighter,
-        safer final design. On the physical robot, undulation did not improve glide distance at the lower
+        Informed directly by my torque analysis, switching the side-module material from PLA to balsa wood improved the innermost motor's safety factor.
+        The safety facor was improved from 3× to 4×, giving the team a lighter, safer final design. 
+        On the physical robot, undulation did not improve glide distance at the lower
         launch speed of 1.1 m/s (p = 0.998), but at 1.8 m/s it increased mean glide distance by 8.7%,
         from 0.595 ± 0.024 m to 0.647 ± 0.028 m (p = 0.010) — a statistically significant result showing
         that undulation's benefit depends on reaching a sufficient launch velocity.
