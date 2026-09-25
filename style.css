@@ -225,8 +225,8 @@ button:focus-visible {
 
 /* Small circular photo, sits to the left of the name */
 .hero__photo {
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--line);
